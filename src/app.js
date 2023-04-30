@@ -1,4 +1,4 @@
-import Button from './modules/class-button.js';
+import Button from './modules/class-button';
 
 const body = document.querySelector('body');
 const main = document.createElement('main');
