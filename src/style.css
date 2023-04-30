@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  align-items: center;
+  background-color: honeydew;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 20px;
+  width: 100%;
+}
+
+.textarea {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  height: 200px;
+  line-height: 1.5;
+  padding: 10px;
+  resize: none;
+  width: 90%;
+}
+
+.keyboard-container {
+  background-color: #fff;
+  border: solid 1px black;
+  display: flex;
+  flex-wrap: wrap;
+  height: 300px;
+  margin-top: 20px;
+  width: 90%;
+}
