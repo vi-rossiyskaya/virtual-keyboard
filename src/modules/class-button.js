@@ -18,6 +18,7 @@ export default class Button {
     const button = document.createElement('button');
     button.textContent = this.label;
     button.classList.add('button');
+    button.dataset.code = this.code;
     return button;
   }
 
