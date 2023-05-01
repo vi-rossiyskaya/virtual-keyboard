@@ -2,59 +2,45 @@ const keys = {
   en: {
     'Backquote': {
       'key': '§',
-      'value': '§',
-      'altKey': false,
-      'ctrlKey': false,
-      'metaKey': false,
-      'shiftKey': '±',
+      'valueNormal': '§',
+      'valueShift': '±',
+      'valueCaps': '§'
     },
     'Digit1': {
       'key': '1',
-      'value': '1',
-      'altKey': false,
-      'ctrlKey': false,
-      'metaKey': false,
-      'shiftKey': '!',
+      'valueNormal': '1',
+      'valueShift': '!',
+      'valueCaps': '1'
     },
     'KeyQ': {
       'key': 'q',
-      'value': 'q',
-      'altKey': false,
-      'ctrlKey': false,
-      'metaKey': false,
-      'shiftKey': 'Q',
+      'valueNormal': 'q',
+      'valueShift': 'Q',
+      'valueCaps': 'Q'
     },
     'ShiftLeft': {
       'key': 'Shift',
-      'value': '',
-      'altKey': false,
-      'ctrlKey': false,
-      'metaKey': false,
-      'shiftKey': '',
+      'valueNormal': '',
+      'valueShift': '',
+      'valueCaps': ''
     },
     'Space': {
       'key': ' ',
-      'value': ' ',
-      'altKey': false,
-      'ctrlKey': false,
-      'metaKey': false,
-      'shiftKey': '',
+      'valueNormal': ' ',
+      'valueShift': ' ',
+      'valueCaps': ' '
     },
     'Tab': {
       'key': 'Tab',
-      'value': '  ',
-      'altKey': false,
-      'ctrlKey': false,
-      'metaKey': false,
-      'shiftKey': '',
+      'valueNormal': '  ',
+      'valueShift': ' ',
+      'valueCaps': '  '
     },
     'Backspace': {
       'key': 'Backspace',
-      'value': '',
-      'altKey': false,
-      'ctrlKey': false,
-      'metaKey': false,
-      'shiftKey': '',
+      'valueNormal': '',
+      'valueShift': '',
+      'valueCaps': ''
     },
 
   },
