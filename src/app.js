@@ -19,8 +19,8 @@ renderButtons('en', keyboardContainer, keys);
 
 document.addEventListener('keydown', (event) => {
   handleKeyDown(event);
-})
+});
 
 document.addEventListener('keyup', (event) => {
   handleKeyUp(event);
-})
+});

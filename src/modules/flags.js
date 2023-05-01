@@ -1,2 +1,13 @@
-export let shiftPressed = false;
-export let capsPressed = false;
+let shiftPressed = false;
+let capsPressed = false;
+
+export function toggleShiftFlag() {
+  shiftPressed = !shiftPressed;
+}
+export function toggleCapsFlag() {
+  capsPressed = !capsPressed;
+}
+
+export function getCapsFlag() {
+  return capsPressed;
+}

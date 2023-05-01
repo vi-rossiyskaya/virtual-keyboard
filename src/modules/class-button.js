@@ -1,4 +1,4 @@
-import createSpan from "./createSpan";
+import createSpan from './createSpan';
 
 export default class Button {
   constructor(buttonData, code) {
@@ -19,8 +19,8 @@ export default class Button {
     if (e.isTrusted) {
       this.textarea.value += this[e.target.dataset.type];
     } else {
-      let targetBtn = e.target;
-      let activeElem = targetBtn.querySelector('.button__content_active');
+      const targetBtn = e.target;
+      const activeElem = targetBtn.querySelector('.button__content_active');
       if (!this.modifier) {
         this.textarea.value += this[activeElem.dataset.type];
       }
