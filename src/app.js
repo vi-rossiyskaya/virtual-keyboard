@@ -1,4 +1,5 @@
-import Button from './modules/class-button';
+import renderButtons from './modules/render-buttons';
+import keys from './modules/keys';
 
 const body = document.querySelector('body');
 const main = document.createElement('main');
@@ -12,5 +13,4 @@ keyboardContainer.classList.add('keyboard-container');
 main.append(textArea, keyboardContainer);
 body.append(main);
 
-const button = new Button('1', 'a');
-button.render(keyboardContainer);
+renderButtons('en', keyboardContainer, keys);

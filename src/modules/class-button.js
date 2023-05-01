@@ -1,7 +1,9 @@
 export default class Button {
-  constructor(key, code) {
-    this.key = key;
+  constructor(buttonData, code) {
+    this.label = buttonData.key;
+    this.value = buttonData.value;
     this.code = code;
+    this.textarea = document.querySelector('.textarea');
     this.element = this.createButton();
     this.element.addEventListener('click', () => {
       this.onClick();
@@ -9,12 +11,12 @@ export default class Button {
   }
 
   onClick() {
-    console.log(`Clicked button ${this.key}`);
+    this.textarea.value += this.value;
   }
 
   createButton() {
     const button = document.createElement('button');
-    button.textContent = this.key;
+    button.textContent = this.label;
     button.classList.add('button');
     return button;
   }
