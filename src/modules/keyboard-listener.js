@@ -4,5 +4,6 @@ export default function keyboardListener(event) {
   if (targetBtn) {
     const click = new Event('click');
     targetBtn.dispatchEvent(click);
+    targetBtn.classList.add('button_active');
   }
 }

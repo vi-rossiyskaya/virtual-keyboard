@@ -8,20 +8,10 @@ export default class Button {
     this.element.addEventListener('click', () => {
       this.onClick();
     });
-    this.element.addEventListener('transitionend', (e) => {
-      this.onTransitionend(e)
-    })
   }
 
   onClick() {
     this.textarea.value += this.value;
-    this.element.classList.add('button_active');
-  }
-
-  onTransitionend(event) {
-    if (event.propertyName === 'background-color') {
-      this.element.classList.remove('button_active');
-    }
   }
 
   createButton() {
