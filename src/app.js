@@ -1,5 +1,6 @@
 import renderButtons from './modules/render-buttons';
 import keys from './modules/keys';
+import keyboardListener from './modules/keyboard-listener';
 
 const body = document.querySelector('body');
 const main = document.createElement('main');
@@ -14,3 +15,7 @@ main.append(textArea, keyboardContainer);
 body.append(main);
 
 renderButtons('en', keyboardContainer, keys);
+
+document.addEventListener('keydown', (event) => {
+  keyboardListener(event);
+})
