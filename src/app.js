@@ -13,9 +13,9 @@ main.classList.add('main');
 paragraph.classList.add('message');
 textArea.classList.add('textarea');
 keyboardContainer.classList.add('keyboard-container');
-paragraph.textContent = `Клавиатура создана в macOS. \n Для переключения используйте Ctrl + Alt`
+paragraph.textContent = 'Клавиатура создана в macOS. \n Для переключения используйте Ctrl + Alt';
 
-main.append(paragraph ,textArea, keyboardContainer);
+main.append(paragraph, textArea, keyboardContainer);
 body.append(main);
 
 renderButtons('en', keyboardContainer, keys);
