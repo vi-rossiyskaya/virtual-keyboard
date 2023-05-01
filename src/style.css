@@ -13,10 +13,14 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 200px auto;
+  margin: 100px auto;
   max-width: 900px;
   padding: 20px;
   width: 100%;
+}
+
+.message {
+  margin-bottom: 30px;
 }
 
 .textarea {
