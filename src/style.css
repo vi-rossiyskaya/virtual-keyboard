@@ -101,6 +101,21 @@ body {
   bottom: 0;
 }
 
+[data-code="Tab"] {
+  position: relative;
+}
+
+[data-code="Tab"]::after {
+  content: "tab";
+  position: absolute;
+  height: 50px;
+  line-height: 50px;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
 [data-code="CapsLock"], [data-code="ShiftRight"], [data-code="CapsLock"] *, [data-code="ShiftRight"] * {
   width: 100px;
 }

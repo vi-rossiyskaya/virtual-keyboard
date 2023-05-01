@@ -100,10 +100,10 @@ const keys = {
     },
     Tab: {
       key: 'tab',
-      valueNormal: '  ',
-      valueShift: ' ',
-      valueCaps: '',
-      modifier: true,
+      valueNormal: '\t',
+      valueShift: '\t',
+      valueCaps: '\t',
+      modifier: false,
     },
     KeyQ: {
       key: 'q',
