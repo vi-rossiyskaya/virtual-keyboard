@@ -92,14 +92,14 @@ const keys = {
       modifier: false,
     },
     Backspace: {
-      key: 'Backspace',
+      key: '←',
       valueNormal: '',
       valueShift: '',
       valueCaps: '',
       modifier: true,
     },
     Tab: {
-      key: 'Tab',
+      key: 'tab',
       valueNormal: '  ',
       valueShift: ' ',
       valueCaps: '',
@@ -197,7 +197,7 @@ const keys = {
       modifier: false,
     },
     CapsLock: {
-      key: 'CapsLock',
+      key: 'capsLock',
       valueNormal: '',
       valueShift: '',
       valueCaps: '',
