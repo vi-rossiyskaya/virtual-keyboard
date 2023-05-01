@@ -14,6 +14,7 @@ export default function keyboardListener(event) {
       toggleActive(elem);
     });
   }
+
   if (event.key === 'CapsLock') {
     if (event.getModifierState('CapsLock')) {
       const currentBtns = document.querySelectorAll('.button__content_active');
@@ -25,6 +26,11 @@ export default function keyboardListener(event) {
         toggleActive(elem);
       });
     }
+  }
+
+  if (event.code === 'Backspace') {
+    const textArea = document.querySelector('.textarea');
+    textArea.value = textArea.value.slice(0, textArea.value.length - 1);
   }
 
   const targetBtn = document.querySelector(`[data-code=${event.code}]`);
