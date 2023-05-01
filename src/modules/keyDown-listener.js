@@ -1,5 +1,5 @@
 import toggleActive from './toggleActiveClass';
-import { toggleShiftFlag, toggleCapsFlag } from './flags';
+import { toggleShiftFlag } from './flags';
 
 export default function keyboardListener(event) {
   event.preventDefault();
@@ -15,7 +15,16 @@ export default function keyboardListener(event) {
     });
   }
   if (event.key === 'CapsLock') {
-    toggleCapsFlag();
+    if (event.getModifierState('CapsLock')) {
+      const currentBtns = document.querySelectorAll('.button__content_active');
+      currentBtns.forEach((elem) => {
+        toggleActive(elem);
+      });
+      const capsBtns = document.querySelectorAll('[data-type="valueCaps"]');
+      capsBtns.forEach((elem) => {
+        toggleActive(elem);
+      });
+    }
   }
 
   const targetBtn = document.querySelector(`[data-code=${event.code}]`);

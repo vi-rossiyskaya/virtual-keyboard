@@ -1,5 +1,5 @@
 import toggleActive from './toggleActiveClass';
-import { toggleShiftFlag, getCapsFlag } from './flags';
+import { toggleShiftFlag } from './flags';
 
 export default function handleKeyUp(event) {
   if (event.key === 'Shift') {
@@ -8,13 +8,24 @@ export default function handleKeyUp(event) {
     shiftBtns.forEach((elem) => {
       toggleActive(elem);
     });
-    const capsPressed = getCapsFlag();
-    if (capsPressed) {
+    if (event.getModifierState('CapsLock')) {
       const capsBtns = document.querySelectorAll('[data-type="valueCaps"]');
       capsBtns.forEach((elem) => {
         toggleActive(elem);
       });
     } else {
+      const normalBtns = document.querySelectorAll('[data-type="valueNormal"]');
+      normalBtns.forEach((elem) => {
+        toggleActive(elem);
+      });
+    }
+  }
+  if (event.key === 'CapsLock') {
+    if (!event.getModifierState(event.key)) {
+      const currentBtns = document.querySelectorAll('.button__content_active');
+      currentBtns.forEach((elem) => {
+        toggleActive(elem);
+      });
       const normalBtns = document.querySelectorAll('[data-type="valueNormal"]');
       normalBtns.forEach((elem) => {
         toggleActive(elem);
