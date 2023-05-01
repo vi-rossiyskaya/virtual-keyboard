@@ -1,22 +1,40 @@
+import createSpan from "./createSpan";
+
 export default class Button {
   constructor(buttonData, code) {
     this.label = buttonData.key;
-    this.value = buttonData.value;
+    this.valueNormal = buttonData.valueNormal;
+    this.valueShift = buttonData.valueShift;
+    this.valueCaps = buttonData.valueCaps;
+    this.modifier = buttonData.modifier;
     this.code = code;
     this.textarea = document.querySelector('.textarea');
     this.element = this.createButton();
-    this.element.addEventListener('click', () => {
-      this.onClick();
+    this.element.addEventListener('click', (e) => {
+      this.onClick(e);
     });
   }
 
-  onClick() {
-    this.textarea.value += this.value;
+  onClick(e) {
+    if (e.isTrusted) {
+      this.textarea.value += this[e.target.dataset.type];
+    } else {
+      let targetBtn = e.target;
+      let activeElem = targetBtn.querySelector('.button__content_active');
+      if (!this.modifier) {
+        this.textarea.value += this[activeElem.dataset.type];
+      }
+    }
   }
 
   createButton() {
     const button = document.createElement('button');
-    button.textContent = this.label;
+    const normalText = createSpan(this.modifier ? this.label : this.valueNormal, 'valueNormal', true);
+    const shiftText = createSpan(this.modifier ? this.label : this.valueShift, 'valueShift', false);
+    const capText = createSpan(this.modifier ? this.label : this.valueCaps, 'valueCaps', false);
+    button.append(normalText);
+    button.append(shiftText);
+    button.append(capText);
     button.classList.add('button');
     button.dataset.code = this.code;
     return button;
