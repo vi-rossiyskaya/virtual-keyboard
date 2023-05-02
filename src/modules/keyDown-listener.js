@@ -3,6 +3,7 @@ import { toggleShiftFlag } from './flags';
 import {
   addPressedValue, checkPressed, changeLangVar, getLang,
 } from './switch-lang-helper';
+import { handleCapslockKeyDown } from './handle-capslock';
 import keys from './keys';
 import renderButtons from './render-buttons';
 import handleBackspace from './handle-backspace';
@@ -38,16 +39,7 @@ export default function keyboardListener(event) {
   }
 
   if (event.key === 'CapsLock') {
-    if (event.getModifierState('CapsLock')) {
-      const currentBtns = document.querySelectorAll('.button__content_active');
-      currentBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-      const capsBtns = document.querySelectorAll('[data-type="valueCaps"]');
-      capsBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-    }
+    handleCapslockKeyDown(event);
   }
 
   if (event.code === 'Backspace') {

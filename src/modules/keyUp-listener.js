@@ -1,6 +1,7 @@
 import toggleActive from './toggleActiveClass';
 import { toggleShiftFlag } from './flags';
 import { clearPressed } from './switch-lang-helper';
+import { handleCapslockKeyUp } from './handle-capslock';
 
 export default function handleKeyUp(event) {
   clearPressed();
@@ -28,16 +29,7 @@ export default function handleKeyUp(event) {
     }
   }
   if (event.key === 'CapsLock') {
-    if (!event.getModifierState(event.key)) {
-      const currentBtns = document.querySelectorAll('.button__content_active');
-      currentBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-      const normalBtns = document.querySelectorAll('[data-type="valueNormal"]');
-      normalBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-    }
+    handleCapslockKeyUp(event);
   }
 
   const targetBtn = document.querySelector(`[data-code=${event.code}]`);
