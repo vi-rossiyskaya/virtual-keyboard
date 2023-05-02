@@ -17,7 +17,7 @@ export default class Button {
   }
 
   onClick(e) {
-    if (e.isTrusted) {
+    if (e.isTrusted && this[e.target.dataset.type] !== undefined) {
       this.textarea.value += this[e.target.dataset.type];
     } else {
       const targetBtn = e.target;
