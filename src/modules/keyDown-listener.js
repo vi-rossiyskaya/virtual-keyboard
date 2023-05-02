@@ -5,6 +5,7 @@ import {
 } from './switch-lang-helper';
 import keys from './keys';
 import renderButtons from './render-buttons';
+import handleBackspace from './handle-backspace';
 
 export default function keyboardListener(event) {
   event.preventDefault();
@@ -50,8 +51,7 @@ export default function keyboardListener(event) {
   }
 
   if (event.code === 'Backspace') {
-    const textArea = document.querySelector('.textarea');
-    textArea.value = textArea.value.slice(0, textArea.value.length - 1);
+    handleBackspace();
   }
 
   const targetBtn = document.querySelector(`[data-code=${event.code}]`);
