@@ -6,6 +6,7 @@ export default class Button {
     this.valueNormal = buttonData.valueNormal;
     this.valueShift = buttonData.valueShift;
     this.valueCaps = buttonData.valueCaps;
+    this.valueShiftCaps = buttonData.valueShiftCaps;
     this.modifier = buttonData.modifier;
     this.code = code;
     this.textarea = document.querySelector('.textarea');
@@ -32,9 +33,11 @@ export default class Button {
     const normalText = createSpan(this.modifier ? this.label : this.valueNormal, 'valueNormal', true);
     const shiftText = createSpan(this.modifier ? this.label : this.valueShift, 'valueShift', false);
     const capText = createSpan(this.modifier ? this.label : this.valueCaps, 'valueCaps', false);
+    const shiftCapText = createSpan(this.modifier ? this.label : this.valueShiftCaps, 'valueShiftCaps', false);
     button.append(normalText);
     button.append(shiftText);
     button.append(capText);
+    button.append(shiftCapText);
     button.classList.add('button');
     button.dataset.code = this.code;
     return button;
