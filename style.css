@@ -96,7 +96,7 @@ body {
   position: relative;
 }
 
-[data-code="Enter"]::after {
+.button[data-code="Enter"]::after {
   content: "↵";
   position: absolute;
   height: 50px;
@@ -111,7 +111,7 @@ body {
   position: relative;
 }
 
-[data-code="Tab"]::after {
+.button[data-code="Tab"]::after {
   content: "tab";
   position: absolute;
   height: 50px;
