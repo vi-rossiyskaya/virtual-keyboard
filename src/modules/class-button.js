@@ -1,5 +1,8 @@
 import createSpan from './createSpan';
 import handleBackspace from './handle-backspace';
+import {
+  handleCapslockKeyDown, handleCapslockKeyUp, toggleCapslock, isCapslockOn,
+} from './handle-capslock';
 
 export default class Button {
   constructor(buttonData, code) {
@@ -22,6 +25,14 @@ export default class Button {
       this.textarea.value += this[e.target.dataset.type];
       if (e.target.dataset.code === 'Backspace') {
         handleBackspace();
+      }
+      if (e.target.dataset.code === 'CapsLock') {
+        toggleCapslock();
+        if (isCapslockOn()) {
+          handleCapslockKeyDown(e);
+        } else {
+          handleCapslockKeyUp(e);
+        }
       }
     } else {
       const targetBtn = e.target;
