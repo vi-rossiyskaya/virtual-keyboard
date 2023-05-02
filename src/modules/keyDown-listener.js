@@ -13,8 +13,8 @@ export default function keyboardListener(event) {
   if (checkPressed()) {
     const keyboardContainer = document.querySelector('.keyboard-container');
     keyboardContainer.innerHTML = '';
-    renderButtons(getLang(), keyboardContainer, keys);
     changeLangVar();
+    renderButtons(getLang(), keyboardContainer, keys);
   }
 
   if (event.key === 'Shift') {

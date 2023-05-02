@@ -1,6 +1,10 @@
 const pressed = new Set();
 const langs = ['en', 'ru'];
-let lang = langs[0];
+const lang = langs[0];
+
+function setLocalStorage(language) {
+  localStorage.setItem('lang_key', language);
+}
 
 export const switchSequence = ['ControlLeft', 'AltLeft'];
 
@@ -23,9 +27,17 @@ export function clearPressed() {
 }
 
 export function changeLangVar() {
-  lang = lang === langs[0] ? langs[1] : langs[0];
+  if (localStorage.getItem('lang_key')) {
+    if (localStorage.getItem('lang_key') === langs[0]) {
+      setLocalStorage(langs[1]);
+    } else {
+      setLocalStorage(langs[0]);
+    }
+  } else {
+    setLocalStorage(lang === langs[0] ? langs[1] : langs[0]);
+  }
 }
 
 export function getLang() {
-  return lang;
+  return localStorage.getItem('lang_key') ? localStorage.getItem('lang_key') : lang;
 }

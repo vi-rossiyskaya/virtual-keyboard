@@ -18,7 +18,6 @@ paragraph.textContent = 'Клавиатура создана в macOS. \n Для
 
 main.append(paragraph, textArea, keyboardContainer);
 body.append(main);
-
 renderButtons(getLang(), keyboardContainer, keys);
 
 document.addEventListener('keydown', (event) => {
