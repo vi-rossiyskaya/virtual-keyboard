@@ -30,10 +30,10 @@ export default class Button {
 
   createButton() {
     const button = document.createElement('button');
-    const normalText = createSpan(this.modifier ? this.label : this.valueNormal, 'valueNormal', true);
-    const shiftText = createSpan(this.modifier ? this.label : this.valueShift, 'valueShift', false);
-    const capText = createSpan(this.modifier ? this.label : this.valueCaps, 'valueCaps', false);
-    const shiftCapText = createSpan(this.modifier ? this.label : this.valueShiftCaps, 'valueShiftCaps', false);
+    const normalText = createSpan(this.modifier ? this.label : this.valueNormal, this.code, 'valueNormal', true);
+    const shiftText = createSpan(this.modifier ? this.label : this.valueShift, this.code, 'valueShift', false);
+    const capText = createSpan(this.modifier ? this.label : this.valueCaps, this.code, 'valueCaps', false);
+    const shiftCapText = createSpan(this.modifier ? this.label : this.valueShiftCaps, this.code, 'valueShiftCaps', false);
     button.append(normalText);
     button.append(shiftText);
     button.append(capText);
