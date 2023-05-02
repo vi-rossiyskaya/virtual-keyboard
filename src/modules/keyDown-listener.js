@@ -23,10 +23,17 @@ export default function keyboardListener(event) {
     currentBtns.forEach((elem) => {
       toggleActive(elem);
     });
-    const shiftBtns = document.querySelectorAll('[data-type="valueShift"]');
-    shiftBtns.forEach((elem) => {
-      toggleActive(elem);
-    });
+    if (event.getModifierState('CapsLock')) {
+      const shiftBtns = document.querySelectorAll('[data-type="valueShiftCaps"]');
+      shiftBtns.forEach((elem) => {
+        toggleActive(elem);
+      });
+    } else {
+      const shiftBtns = document.querySelectorAll('[data-type="valueShift"]');
+      shiftBtns.forEach((elem) => {
+        toggleActive(elem);
+      });
+    }
   }
 
   if (event.key === 'CapsLock') {

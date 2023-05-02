@@ -6,16 +6,21 @@ export default function handleKeyUp(event) {
   clearPressed();
   if (event.key === 'Shift') {
     toggleShiftFlag();
-    const shiftBtns = document.querySelectorAll('[data-type="valueShift"]');
-    shiftBtns.forEach((elem) => {
-      toggleActive(elem);
-    });
+
     if (event.getModifierState('CapsLock')) {
-      const capsBtns = document.querySelectorAll('[data-type="valueCaps"]');
+      const capsBtns = document.querySelectorAll('[data-type="valueShiftCaps"]');
       capsBtns.forEach((elem) => {
         toggleActive(elem);
       });
+      const normalBtns = document.querySelectorAll('[data-type="valueCaps"]');
+      normalBtns.forEach((elem) => {
+        toggleActive(elem);
+      });
     } else {
+      const shiftBtns = document.querySelectorAll('[data-type="valueShift"]');
+      shiftBtns.forEach((elem) => {
+        toggleActive(elem);
+      });
       const normalBtns = document.querySelectorAll('[data-type="valueNormal"]');
       normalBtns.forEach((elem) => {
         toggleActive(elem);
