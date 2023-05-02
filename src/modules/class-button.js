@@ -1,4 +1,5 @@
 import createSpan from './createSpan';
+import handleBackspace from './handle-backspace';
 
 export default class Button {
   constructor(buttonData, code) {
@@ -19,6 +20,9 @@ export default class Button {
   onClick(e) {
     if (e.isTrusted && this[e.target.dataset.type] !== undefined) {
       this.textarea.value += this[e.target.dataset.type];
+      if (e.target.dataset.code === 'Backspace') {
+        handleBackspace();
+      }
     } else {
       const targetBtn = e.target;
       const activeElem = targetBtn.querySelector('.button__content_active');
