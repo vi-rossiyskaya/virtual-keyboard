@@ -1,8 +1,22 @@
 import toggleActive from './toggleActiveClass';
 import { toggleShiftFlag } from './flags';
+import {
+  addPressedValue, checkPressed, changeLangVar, getLang,
+} from './switch-lang-helper';
+import keys from './keys';
+import renderButtons from './render-buttons';
 
 export default function keyboardListener(event) {
   event.preventDefault();
+
+  addPressedValue(event.code);
+  if (checkPressed()) {
+    const keyboardContainer = document.querySelector('.keyboard-container');
+    keyboardContainer.innerHTML = '';
+    renderButtons(getLang(), keyboardContainer, keys);
+    changeLangVar();
+  }
+
   if (event.key === 'Shift') {
     toggleShiftFlag();
     const currentBtns = document.querySelectorAll('.button__content_active');

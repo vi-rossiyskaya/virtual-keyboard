@@ -1,7 +1,9 @@
 import toggleActive from './toggleActiveClass';
 import { toggleShiftFlag } from './flags';
+import { clearPressed } from './switch-lang-helper';
 
 export default function handleKeyUp(event) {
+  clearPressed();
   if (event.key === 'Shift') {
     toggleShiftFlag();
     const shiftBtns = document.querySelectorAll('[data-type="valueShift"]');

@@ -2,6 +2,7 @@ import renderButtons from './modules/render-buttons';
 import keys from './modules/keys';
 import handleKeyDown from './modules/keyDown-listener';
 import handleKeyUp from './modules/keyUp-listener';
+import { getLang } from './modules/switch-lang-helper';
 
 const body = document.querySelector('body');
 const main = document.createElement('main');
@@ -18,7 +19,7 @@ paragraph.textContent = 'Клавиатура создана в macOS. \n Для
 main.append(paragraph, textArea, keyboardContainer);
 body.append(main);
 
-renderButtons('en', keyboardContainer, keys);
+renderButtons(getLang(), keyboardContainer, keys);
 
 document.addEventListener('keydown', (event) => {
   handleKeyDown(event);
