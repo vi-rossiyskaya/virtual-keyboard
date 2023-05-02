@@ -38,7 +38,7 @@ export default class Button {
         }
       }
       if (e.target.dataset.code === 'ShiftLeft' || e.target.dataset.code === 'ShiftRight') {
-        if (isShiftOn()) {
+        if (!isShiftOn()) {
           handleShiftKeyDown(e);
         } else {
           handleShiftKeyUp(e);
