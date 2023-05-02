@@ -3,6 +3,9 @@ import handleBackspace from './handle-backspace';
 import {
   handleCapslockKeyDown, handleCapslockKeyUp, toggleCapslock, isCapslockOn,
 } from './handle-capslock';
+import {
+  handleShiftKeyDown, handleShiftKeyUp, isShiftOn,
+} from './handle-shift';
 
 export default class Button {
   constructor(buttonData, code) {
@@ -32,6 +35,13 @@ export default class Button {
           handleCapslockKeyDown(e);
         } else {
           handleCapslockKeyUp(e);
+        }
+      }
+      if (e.target.dataset.code === 'ShiftLeft' || e.target.dataset.code === 'ShiftRight') {
+        if (isShiftOn()) {
+          handleShiftKeyDown(e);
+        } else {
+          handleShiftKeyUp(e);
         }
       }
     } else {

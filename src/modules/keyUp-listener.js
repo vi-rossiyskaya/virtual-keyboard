@@ -1,33 +1,13 @@
-import toggleActive from './toggleActiveClass';
-import { toggleShiftFlag } from './flags';
 import { clearPressed } from './switch-lang-helper';
 import { handleCapslockKeyUp } from './handle-capslock';
+import { handleShiftKeyUp } from './handle-shift';
 
 export default function handleKeyUp(event) {
   clearPressed();
   if (event.key === 'Shift') {
-    toggleShiftFlag();
-
-    if (event.getModifierState('CapsLock')) {
-      const capsBtns = document.querySelectorAll('[data-type="valueShiftCaps"]');
-      capsBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-      const normalBtns = document.querySelectorAll('[data-type="valueCaps"]');
-      normalBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-    } else {
-      const shiftBtns = document.querySelectorAll('[data-type="valueShift"]');
-      shiftBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-      const normalBtns = document.querySelectorAll('[data-type="valueNormal"]');
-      normalBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-    }
+    handleShiftKeyUp(event);
   }
+
   if (event.key === 'CapsLock') {
     handleCapslockKeyUp(event);
   }

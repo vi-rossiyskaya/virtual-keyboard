@@ -1,8 +1,7 @@
-import toggleActive from './toggleActiveClass';
-import { toggleShiftFlag } from './flags';
 import {
   addPressedValue, checkPressed, changeLangVar, getLang,
 } from './switch-lang-helper';
+import { handleShiftKeyDown } from './handle-shift';
 import { handleCapslockKeyDown } from './handle-capslock';
 import keys from './keys';
 import renderButtons from './render-buttons';
@@ -20,22 +19,7 @@ export default function keyboardListener(event) {
   }
 
   if (event.key === 'Shift') {
-    toggleShiftFlag();
-    const currentBtns = document.querySelectorAll('.button__content_active');
-    currentBtns.forEach((elem) => {
-      toggleActive(elem);
-    });
-    if (event.getModifierState('CapsLock')) {
-      const shiftBtns = document.querySelectorAll('[data-type="valueShiftCaps"]');
-      shiftBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-    } else {
-      const shiftBtns = document.querySelectorAll('[data-type="valueShift"]');
-      shiftBtns.forEach((elem) => {
-        toggleActive(elem);
-      });
-    }
+    handleShiftKeyDown(event);
   }
 
   if (event.key === 'CapsLock') {
