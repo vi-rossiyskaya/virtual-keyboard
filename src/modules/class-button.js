@@ -30,6 +30,7 @@ export default class Button {
         handleBackspace();
       }
       if (e.target.dataset.code === 'CapsLock') {
+        e.target.parentNode.classList.toggle('button_active');
         toggleCapslock();
         if (isCapslockOn()) {
           handleCapslockKeyDown(e);
@@ -38,6 +39,7 @@ export default class Button {
         }
       }
       if (e.target.dataset.code === 'ShiftLeft' || e.target.dataset.code === 'ShiftRight') {
+        e.target.parentNode.classList.toggle('button_active');
         if (!isShiftOn()) {
           handleShiftKeyDown(e);
         } else {
