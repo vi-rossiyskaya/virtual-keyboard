@@ -84,11 +84,13 @@ body {
   display: block;
 }
 
-[data-code="Backspace"], [data-code="Backspace"] *{
+[data-code="Backspace"],
+[data-code="Backspace"] * {
   width: 60px;
 }
 
-[data-code="Space"], [data-code="Space"] *{
+[data-code="Space"],
+[data-code="Space"] * {
   width: 250px;
 }
 
@@ -122,6 +124,9 @@ body {
   bottom: 0;
 }
 
-[data-code="CapsLock"], [data-code="ShiftRight"], [data-code="CapsLock"] *, [data-code="ShiftRight"] * {
+[data-code="CapsLock"],
+[data-code="ShiftRight"],
+[data-code="CapsLock"] *,
+[data-code="ShiftRight"] * {
   width: 100px;
 }
