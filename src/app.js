@@ -4,6 +4,9 @@ import handleKeyDown from './modules/keyDown-listener';
 import handleKeyUp from './modules/keyUp-listener';
 import { getLang } from './modules/switch-lang-helper';
 
+import './index.html';
+import './style.css';
+
 const body = document.querySelector('body');
 const main = document.createElement('main');
 const paragraph = document.createElement('p');
