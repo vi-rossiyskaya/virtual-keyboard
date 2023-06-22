@@ -1,12 +1,4 @@
-@font-face {
-  font-family: "Baskervville", serif;
-  src: url(./assets/fonts/Baskervville/Baskervville-Regular.ttf);
-}
-
-@font-face {
-  font-family: "Playfair Display SC", serif;
-  src: url(./assets/fonts/Playfair_Display_SC/PlayfairDisplaySC-Regular.ttf);
-}
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Playfair+Display+SC&display=swap");
 
 :root {
   --bg-color: #333333;
@@ -27,6 +19,12 @@ body {
   background-blend-mode: soft-light;
 }
 
+.heading {
+  color: var(--key-font-color);
+  font-family: "Playfair Display SC";
+  margin-bottom: 20px;
+}
+
 .main {
   align-items: center;
   display: flex;
@@ -40,6 +38,7 @@ body {
 
 .message {
   margin-bottom: 30px;
+  font-family: "Baskervville";
   color: var(--key-font-color);
 }
 
