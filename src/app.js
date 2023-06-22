@@ -9,17 +9,21 @@ import './style.css';
 
 const body = document.querySelector('body');
 const main = document.createElement('main');
+const heading = document.createElement('h1');
 const paragraph = document.createElement('p');
 const textArea = document.createElement('textarea');
 const keyboardContainer = document.createElement('div');
 
 main.classList.add('main');
+heading.classList.add('heading');
 paragraph.classList.add('message');
 textArea.classList.add('textarea');
 keyboardContainer.classList.add('keyboard-container');
+
+heading.textContent = 'Virtual Keyboard';
 paragraph.textContent = 'Клавиатура создана в macOS. \n Для переключения используйте Ctrl + Alt';
 
-main.append(paragraph, textArea, keyboardContainer);
+main.append(heading, paragraph, textArea, keyboardContainer);
 body.append(main);
 renderButtons(getLang(), keyboardContainer, keys);
 
