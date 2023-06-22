@@ -34,7 +34,7 @@ module.exports = {
       {
         test: /\.css$/i,
         include: /src/,
-        use: [devMode ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader']
+        use: [devMode ? 'style-loader' : MiniCssExtractPlugin.loader, 'css-loader']
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
