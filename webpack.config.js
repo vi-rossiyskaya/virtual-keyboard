@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const mode = process.env.NODE_ENV || 'development';
 const devMode = mode === 'development';
@@ -20,6 +21,9 @@ module.exports = {
       filename: 'index.html',
       favicon: path.resolve(__dirname, 'src/assets', 'favicon.ico'),
     }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+    })
   ],
   module: {
     rules: [
@@ -29,11 +33,22 @@ module.exports = {
       },
       {
         test: /\.css$/i,
-        use: ['style-loader', 'css-loader']
+        include: /src/,
+        use: [devMode ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/images/[name][ext]',
+        }
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
+        generator: {
+          filename: 'assets/fonts/[name][ext]',
+        }
       },
     ],
   },
